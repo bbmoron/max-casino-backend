@@ -786,8 +786,8 @@
   <script>
     fetch('/data').then(response => response.json()).then(data => {
       const { countries, link } = data;
-      document.getElementById('link-input').value = link;
-      countries.map(country => {
+      document.getElementById('link-input').value = link.link;
+      countries.list.map(country => {
         document.getElementById(country.code).checked = country.prohibited;
       });
     });
