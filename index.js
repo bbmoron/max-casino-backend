@@ -55,8 +55,8 @@ app.post('/appinfo', async (req, res) => {
     error: false,
     data: {
       text: '',
-      prohibited: prohibited || false,
-      link: link.link,
+      prohibited: prohibited[0] || false,
+      link: prohibited[0] ? link.link : '',
     },
   });
 });
