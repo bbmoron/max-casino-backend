@@ -40,7 +40,7 @@ app.get('/data', async (_req, res) => {
   });
 });
 
-app.get('/appinfo', async (req, res) => {
+app.post('/appinfo', async (req, res) => {
   const { countryCode } = req.body;
   const countries = await CountryList.findOne({ id: 1 });
   if (!countries) {
