@@ -42,6 +42,7 @@ app.get('/data', async (_req, res) => {
 
 app.get('/appinfo', async (req, res) => {
   const { countryCode } = req.params;
+  console.log(countryCode);
   const countries = await CountryList.findOne({ id: 1 });
   if (!countries) {
     return res.json({
@@ -50,7 +51,6 @@ app.get('/appinfo', async (req, res) => {
     });
   }
   const prohibited = countries.list.filter((country) => country.code === countryCode);
-  console.log(prohibited);
   return res.json({
     error: false,
     data: {
