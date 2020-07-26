@@ -43,6 +43,7 @@ app.get('/data', async (_req, res) => {
 app.post('/appinfo', async (req, res) => {
   const { countryCode } = req.body;
   const countries = await CountryList.findOne({ id: 1 });
+  const link = await Link.findOne({ id: 1 });
   if (!countries) {
     return res.json({
       error: true,
@@ -55,6 +56,7 @@ app.post('/appinfo', async (req, res) => {
     data: {
       text: '',
       prohibited: prohibited || false,
+      link: link.link,
     },
   });
 });
