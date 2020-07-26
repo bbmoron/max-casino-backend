@@ -49,6 +49,7 @@ app.get('/appinfo', async (req, res) => {
       data: { text: 'Database is down. Check MongoDB instance or contact administrator' },
     });
   }
+  console.log(countries);
   const prohibited = countries.filter((country) => country.code === countryCode);
   return res.json({
     error: false,
