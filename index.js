@@ -63,8 +63,9 @@ app.post('/save', (req, res) => {
   const { link, countries } = req.body;
   const mapped = countries.map((country) => ({ code: country.code, prohibited: country.checked }));
   CountryList.update({ id: 1 }, { id: 1, list: mapped }, { upsert: true }, (countryErr) => {
+    console.log(countryErr);
     if (!countryErr) return res.json({ error: true, data: { text: 'Something went wrong with the update, retry' } });
-    return Link.update({ id: 1 }, { id: 1, link }, { upsert: true }, (linkErr) => {
+    Link.update({ id: 1 }, { id: 1, link }, { upsert: true }, (linkErr) => {
       if (!linkErr) return res.json({ error: true, data: { text: 'Something went wrong with the update, retry' } });
       return res.json({
         error: false,
