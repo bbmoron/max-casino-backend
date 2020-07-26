@@ -10,7 +10,7 @@ const app = express();
 app.use(express.static(process.env.STATIC));
 app.use(cors());
 app.use(bodyparser.json());
-app.use(bodyparser.urlencoded({ extended: false }));
+app.use(bodyparser.urlencoded({ extended: true }));
 
 const countriesModel = new mongoose.Schema({
   code: String,
