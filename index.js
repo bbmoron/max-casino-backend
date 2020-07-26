@@ -41,8 +41,7 @@ app.get('/data', async (_req, res) => {
 });
 
 app.get('/appinfo', async (req, res) => {
-  const { countryCode } = req.params;
-  console.log(countryCode);
+  const { countryCode } = req.body;
   const countries = await CountryList.findOne({ id: 1 });
   if (!countries) {
     return res.json({
