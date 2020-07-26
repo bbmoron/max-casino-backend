@@ -50,7 +50,7 @@ app.get('/appinfo', async (req, res) => {
     });
   }
   console.log(countries);
-  const prohibited = countries.filter((country) => country.code === countryCode);
+  const prohibited = countries.list.filter((country) => country.code === countryCode);
   return res.json({
     error: false,
     data: {
