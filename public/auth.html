@@ -1,0 +1,129 @@
+<html>
+
+<head>
+  <title>Административная панель</title>
+  <style>
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    #welcome {
+      padding-top: 15px;
+      width: 100%;
+      text-align: center;
+    }
+
+    #wrap {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #link-header {
+      margin-left: 5vw;
+    }
+
+    #link-list {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      align-items: space-evenly;
+      margin-left: 5vw;
+      width: 90vw;
+    }
+
+    #link-input {
+      width: 40vw;
+      height: 30px;
+      font-size: 18px;
+      padding-left: 10px;
+    }
+
+    #savebutton {
+      background: #19BA19;
+      text-align: center;
+      color: white;
+      height: 30px;
+      padding-left: 15px;
+      padding-right: 15px;
+      cursor: pointer;
+    }
+
+    #savebutton:hover {
+      background: green;
+    }
+
+    #buttontext {
+      padding: 0;
+      margin: 0;
+      padding-top: 5px;
+    }
+
+    #pwd {
+      width: 300px;
+      height: 30px;
+      font-size: 18px;
+      margin-bottom: 15px;
+    }
+
+    #countries-header {
+      margin-left: 5vw;
+    }
+
+    #countries-list {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      align-items: space-evenly;
+      margin-left: 5vw;
+      width: 90vw;
+    }
+
+    table {
+      width: 100%;
+      font-size: 8pt;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="welcome">
+    <h1>Административная панель "Казино"</h1>
+  </div>
+  <div id="wrap">
+    <input type="text" id="pwd" placeholder="Введите пароль для доступа">
+    <div onclick="auth()" id="savebutton">
+      <p id="buttontext">Войти</p>
+    </div>
+  </div>
+  <script>
+    const auth = () => {
+      const pwd = document.getElementById('pwd').value;
+      fetch('/auth', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json;charset=utf-8'
+        },
+        body: JSON.stringify({
+          password: pwd,
+        }),
+      }).then(response => response.json()).then(data => {
+        // console.log(data.allowed);
+        if (data.allowed) window.location.replace('/success');
+        else window.location.replace('/auth');
+      });
+    }
+  </script>
+</body>
+
+</html>
