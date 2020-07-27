@@ -1,813 +1,917 @@
 <html>
 
 <head>
-  <title>Административная панель</title>
-  <style>
-    html,
-    body {
-      width: 100%;
-      height: 100%;
-      margin: 0;
-      padding: 0;
-      font-family: Arial, Helvetica, sans-serif;
-    }
+    <title>Административная панель</title>
+    <style>
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
 
-    #welcome {
-      padding-top: 15px;
-      width: 100%;
-      text-align: center;
-    }
+        #welcome {
+            padding-top: 15px;
+            width: 100%;
+            text-align: center;
+        }
 
-    #wrap {
-      padding-top: 30px;
-      padding-bottom: 50px;
-    }
+        #wrap {
+            padding-top: 30px;
+            padding-bottom: 50px;
+        }
 
-    #link-header {
-      margin-left: 5vw;
-    }
+        #link-header {
+            margin-left: 5vw;
+        }
 
-    #link-list {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: flex-start;
-      align-items: space-evenly;
-      margin-left: 5vw;
-      width: 90vw;
-    }
+        #link-list {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            align-items: space-evenly;
+            margin-left: 5vw;
+            width: 90vw;
+        }
 
-    #link-input {
-      width: 40vw;
-      height: 30px;
-      font-size: 18px;
-      padding-left: 10px;
-    }
+        #link-input {
+            width: 40vw;
+            height: 30px;
+            font-size: 18px;
+            padding-left: 10px;
+        }
 
-    #savebutton {
-      background: #19BA19;
-      text-align: center;
-      color: white;
-      height: 30px;
-      padding-left: 10px;
-      padding-right: 10px;
-      margin-left: 10px;
-      cursor: pointer;
-    }
+        #savebutton {
+            background: #19BA19;
+            text-align: center;
+            color: white;
+            height: 30px;
+            padding-left: 10px;
+            padding-right: 10px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
 
-    #savebutton:hover {
-      background: green;
-    }
+        #savebutton:hover {
+            background: green;
+        }
 
-    #buttontext {
-      padding: 0;
-      margin: 0;
-      padding-top: 5px;
-    }
+        #buttontext {
+            padding: 0;
+            margin: 0;
+            padding-top: 5px;
+        }
 
-    #countries-header {
-      margin-left: 5vw;
-    }
+        #countries-header {
+            margin-left: 5vw;
+        }
 
-    #countries-list {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: flex-start;
-      align-items: space-evenly;
-      margin-left: 5vw;
-      width: 90vw;
-    }
+        #countries-list {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            align-items: space-evenly;
+            margin-left: 5vw;
+            width: 90vw;
+        }
 
-    table {
-      width: 100%;
-      font-size: 8pt;
-    }
-  </style>
+        table {
+            width: 100%;
+            font-size: 8pt;
+        }
+    </style>
 </head>
 
 <body>
-  <div id="welcome">
-    <h1>Административная панель "Казино"</h1>
-  </div>
-  <div id="wrap">
-    <h2 id="link-header">"Рабочая" ссылка</h2>
-    <div id="link-list">
-      <input id="link-input" type="text" placeholder="Вставьте ссылку...">
-      <div id="savebutton" onclick="saveChanges()">
-        <p id="buttontext">Сохранить изменения</p>
-      </div>
+    <div id="welcome">
+        <h1>Административная панель</h1>
     </div>
-    <h2 id="countries-header">Страны дистрибуции</h2>
-    <div id="countries-list">
-      <table>
-        <tr>
-          <td><input type="checkbox" class="countryCheck" id="AF" name="AF" value="Afghanistan"><label for="AF">
-              Afghanistan</label></td>
-          <td><input type="checkbox" class="countryCheck" id="AX" name="AX" value="Åland Islands"><label for="AX"> Åland
-              Islands</label></td>
-          <td><input type="checkbox" class="countryCheck" id="AL" name="AL" value="Albania"><label for="AL">
-              Albania</label></td>
-          <td><input type="checkbox" class="countryCheck" id="DZ" name="DZ" value="Algeria"><label for="DZ">
-              Algeria</label></td>
-          <td><input type="checkbox" class="countryCheck" id="AS" name="AS" value="American Samoa"><label for="AS">
-              American Samoa</label>
-          </td>
-          <td><input type="checkbox" class="countryCheck" id="AD" name="AD" value="Andorra"><label for="AD">
-              Andorra</label></td>
-        </tr>
-        <tr>
-          <td><input type="checkbox" class="countryCheck" id="AO" name="AO" value="Angola"><label for="AO">
-              Angola</label></td>
-          <td><input type="checkbox" class="countryCheck" id="AI" name="AI" value="Anguilla"><label for="AI">
-              Anguilla</label></td>
-          <td><input type="checkbox" class="countryCheck" id="AQ" name="AQ" value="Antarctica"><label for="AQ">
-              Antarctica</label></td>
-          <td><input type="checkbox" class="countryCheck" id="AG" name="AG" value="Antigua and Barbuda"><label for="AG">
-              Antigua and
-              Barbuda</label></td>
-          <td><input type="checkbox" class="countryCheck" id="AR" name="AR" value="Argentina"><label for="AR">
-              Argentina</label></td>
-          <td><input type="checkbox" class="countryCheck" id="AM" name="AM" value="Armenia"><label for="AM">
-              Armenia</label></td>
-        </tr>
-        <tr>
-          <td><input type="checkbox" class="countryCheck" id="AW" name="AW" value="Aruba"><label for="AW"> Aruba</label>
-          </td>
-          <td><input type="checkbox" class="countryCheck" id="AU" name="AU" value="Australia"><label for="AU">
-              Australia</label></td>
-          <td><input type="checkbox" class="countryCheck" id="AT" name="AT" value="Austria"><label for="AT">
-              Austria</label></td>
-          <td><input type="checkbox" class="countryCheck" id="AZ" name="AZ" value="Azerbaijan"><label for="AZ">
-              Azerbaijan</label></td>
-          <td><input type="checkbox" class="countryCheck" id="BS" name="BS" value="Bahamas"><label for="BS">
-              Bahamas</label></td>
-          <td><input type="checkbox" class="countryCheck" id="BH" name="BH" value="Bahrain"><label for="BH">
-              Bahrain</label></td>
-        </tr>
-        <tr>
-          <td><input type="checkbox" class="countryCheck" id="BD" name="BD" value="Bangladesh"><label for="BD">
-              Bangladesh</label></td>
-          <td><input type="checkbox" class="countryCheck" id="BB" name="BB" value="Barbados"><label for="BB">
-              Barbados</label></td>
-          <td><input type="checkbox" class="countryCheck" id="BY" name="BY" value="Belarus"><label for="BY">
-              Belarus</label></td>
-          <td><input type="checkbox" class="countryCheck" id="BE" name="BE" value="Belgium"><label for="BE">
-              Belgium</label></td>
-          <td><input type="checkbox" class="countryCheck" id="BZ" name="BZ" value="Belize"><label for="BZ">
-              Belize</label></td>
-          <td><input type="checkbox" class="countryCheck" id="BJ" name="BJ" value="Benin"><label for="BJ"> Benin</label>
-          </td>
-        </tr>
-        <tr>
-        <tr>
-          <td><input type="checkbox" class="countryCheck" id="BM" name="BM" value="Bermuda"><label for="BM">
-              Bermuda</label></td>
-          <td><input type="checkbox" class="countryCheck" id="BT" name="BT" value="Bhutan"><label for="BT">
-              Bhutan</label></td>
-          <td><input type="checkbox" class="countryCheck" id="BO" name="BO"
-              value="Bolivia, Plurinational State of"><label for="BO"> Bolivia,
-              Plurinational State of</label></td>
-          <td><input type="checkbox" class="countryCheck" id="BQ" name="BQ"
-              value="Bonaire, Sint Eustatius and Saba"><label for="BQ">
-              Bonaire,
-              Sint
-              Eustatius and Saba</label></td>
-          <td><input type="checkbox" class="countryCheck" id="BA" name="BA" value="Bosnia and Herzegovina"><label
-              for="BA"> Bosnia and
-              Herzegovina</label></td>
-          <td><input type="checkbox" class="countryCheck" id="BW" name="BW" value="Botswana"><label for="BW">
-              Botswana</label></td>
-        </tr>
-        <tr>
-          <td><input type="checkbox" class="countryCheck" id="BV" name="BV" value="Bouvet Island"><label for="BV">
-              Bouvet Island</label></td>
-          <td><input type="checkbox" class="countryCheck" id="BR" name="BR" value="Brazil"><label for="BR">
-              Brazil</label></td>
-          <td><input type="checkbox" class="countryCheck" id="IO" name="IO"
-              value="British Indian Ocean Territory"><label for="IO"> British
-              Indian
-              Ocean
-              Territory</label></td>
-          <td><input type="checkbox" class="countryCheck" id="BN" name="BN" value="Brunei Darussalam"><label for="BN">
-              Brunei
-              Darussalam</label>
-          </td>
-          <td><input type="checkbox" class="countryCheck" id="BG" name="BG" value="Bulgaria"><label for="BG">
-              Bulgaria</label></td>
-          <td><input type="checkbox" class="countryCheck" id="BF" name="BF" value="Burkina Faso"><label for="BF">
-              Burkina Faso</label></td>
-        </tr>
-        <tr>
-          <td><input type="checkbox" class="countryCheck" id="BI" name="BI" value="Burundi"><label for="BI">
-              Burundi</label></td>
-          <td><input type="checkbox" class="countryCheck" id="KH" name="KH" value="Cambodia"><label for="KH">
-              Cambodia</label></td>
-          <td><input type="checkbox" class="countryCheck" id="CM" name="CM" value="Cameroon"><label for="CM">
-              Cameroon</label></td>
-          <td><input type="checkbox" class="countryCheck" id="CA" name="CA" value="Canada"><label for="CA">
-              Canada</label></td>
-          <td><input type="checkbox" class="countryCheck" id="CV" name="CV" value="Cape Verde"><label for="CV"> Cape
-              Verde</label></td>
-          <td><input type="checkbox" class="countryCheck" id="KY" name="KY" value="Cayman Islands"><label for="KY">
-              Cayman Islands</label>
-          </td>
-        </tr>
-        <tr>
-          <td><input type="checkbox" class="countryCheck" id="CF" name="CF" value="Central African Republic"><label
-              for="CF"> Central African
-              Republic</label></td>
-          <td><input type="checkbox" class="countryCheck" id="TD" name="TD" value="Chad"><label for="TD"> Chad</label>
-          </td>
-          <td><input type="checkbox" class="countryCheck" id="CL" name="CL" value="Chile"><label for="CL"> Chile</label>
-          </td>
-          <td><input type="checkbox" class="countryCheck" id="CN" name="CN" value="China"><label for="CN"> China</label>
-          </td>
-          <td><input type="checkbox" class="countryCheck" id="CX" name="CX" value="Christmas Island"><label for="CX">
-              Christmas
-              Island</label>
-          </td>
-          <td><input type="checkbox" class="countryCheck" id="CC" name="CC" value="Cocos (Keeling) Islands"><label
-              for="CC"> Cocos (Keeling)
-              Islands</label></td>
-        </tr>
-        <tr>
-          <td><input type="checkbox" class="countryCheck" id="CO" name="CO" value="Colombia"><label for="CO">
-              Colombia</label></td>
-          <td><input type="checkbox" class="countryCheck" id="KM" name="KM" value="Comoros"><label for="KM">
-              Comoros</label></td>
-          <td><input type="checkbox" class="countryCheck" id="CG" name="CG" value="Congo"><label for="CG"> Congo</label>
-          </td>
-          <td><input type="checkbox" class="countryCheck" id="CD" name="CD"
-              value="Congo, the Democratic Republic of the"><label for="CD">Congo,
-              the
-              Democratic Republic of the</label></td>
-          <td><input type="checkbox" class="countryCheck" id="CK" name="CK" value="Cook Islands"><label for="CK"> Cook
-              Islands</label></td>
-          <td><input type="checkbox" class="countryCheck" id="CR" name="CR" value="Costa Rica"><label for="CR"> Costa
-              Rica</label></td>
-        </tr>
-        <tr>
-          <td><input type="checkbox" class="countryCheck" id="CI" name="CI" value="Côte d'Ivoire"><label for="CI"> Côte
-              d'Ivoire</label></td>
-          <td><input type="checkbox" class="countryCheck" id="HR" name="HR" value="Croatia"><label for="HR">
-              Croatia</label></td>
-          <td><input type="checkbox" class="countryCheck" id="CU" name="CU" value="Cuba"><label for="CU"> Cuba</label>
-          </td>
-          <td><input type="checkbox" class="countryCheck" id="CW" name="CW" value="Curaçao"><label for="CW">
-              Curaçao</label></td>
-          <td><input type="checkbox" class="countryCheck" id="CY" name="CY" value="Cyprus"><label for="CY">
-              Cyprus</label></td>
-          <td><input type="checkbox" class="countryCheck" id="CZ" name="CZ" value="Czech Republic"><label for="CZ">
-              Czech Republic</label>
-          </td>
-        </tr>
-        <tr>
-          <td><input type="checkbox" class="countryCheck" id="DK" name="DK" value="Denmark"><label for="DK">
-              Denmark</label></td>
-          <td><input type="checkbox" class="countryCheck" id="DJ" name="DJ" value="Djibouti"><label for="DJ">
-              Djibouti</label></td>
-          <td><input type="checkbox" class="countryCheck" id="DM" name="DM" value="Dominica"><label for="DM">
-              Dominica</label></td>
-          <td><input type="checkbox" class="countryCheck" id="DO" name="DO" value="Dominican Republic"><label for="DO">
-              Dominican
-              Republic</label>
-          </td>
-          <td><input type="checkbox" class="countryCheck" id="EC" name="EC" value="Ecuador"><label for="EC">
-              Ecuador</label></td>
-          <td><input type="checkbox" class="countryCheck" id="EG" name="EG" value="Egypt"><label for="EG"> Egypt</label>
-          </td>
-        </tr>
-        <tr>
-          <td><input type="checkbox" class="countryCheck" id="SV" name="SV" value="El Salvador"><label for="SV"> El
-              Salvador</label></td>
-          <td><input type="checkbox" class="countryCheck" id="GQ" name="GQ" value="Equatorial Guinea"><label for="GQ">
-              Equatorial
-              Guinea</label>
-          </td>
-          <td><input type="checkbox" class="countryCheck" id="ER" name="ER" value="Eritrea"><label for="ER">
-              Eritrea</label></td>
-          <td><input type="checkbox" class="countryCheck" id="EE" name="EE" value="Estonia"><label for="EE">
-              Estonia</label></td>
-          <td><input type="checkbox" class="countryCheck" id="ET" name="ET" value="Ethiopia"><label for="ET">
-              Ethiopia</label></td>
-          <td><input type="checkbox" class="countryCheck" id="FK" name="FK" value="Falkland Islands (Malvinas)"><label
-              for="FK"> Falkland
-              Islands
-              (Malvinas)</label></td>
-        </tr>
-        <tr>
-          <td><input type="checkbox" class="countryCheck" id="FO" name="FO" value="Faroe Islands"><label for="FO"> Faroe
-              Islands</label></td>
-          <td><input type="checkbox" class="countryCheck" id="FJ" name="FJ" value="Fiji"><label for="FJ"> Fiji</label>
-          </td>
-          <td><input type="checkbox" class="countryCheck" id="FI" name="FI" value="Finland"><label for="FI">
-              Finland</label></td>
-          <td><input type="checkbox" class="countryCheck" id="FR" name="FR" value="France"><label for="FR">
-              France</label></td>
-          <td><input type="checkbox" class="countryCheck" id="GF" name="GF" value="French Guiana"><label for="GF">
-              French Guiana</label></td>
-          <td><input type="checkbox" class="countryCheck" id="PF" name="PF" value="French Polynesia"><label for="PF">
-              French
-              Polynesia</label>
-          </td>
-        </tr>
-        <tr>
-          <td><input type="checkbox" class="countryCheck" id="TF" name="TF" value="French Southern Territories"><label
-              for="TF"> French
-              Southern
-              Territories</label></td>
-          <td><input type="checkbox" class="countryCheck" id="GA" name="GA" value="Gabon"><label for="GA"> Gabon</label>
-          </td>
-          <td><input type="checkbox" class="countryCheck" id="GM" name="GM" value="Gambia"><label for="GM">
-              Gambia</label></td>
-          <td><input type="checkbox" class="countryCheck" id="GE" name="GE" value="Georgia"><label for="GE">
-              Georgia</label></td>
-          <td><input type="checkbox" class="countryCheck" id="DE" name="DE" value="Germany"><label for="DE">
-              Germany</label></td>
-          <td><input type="checkbox" class="countryCheck" id="GH" name="GH" value="Ghana"><label for="GH"> Ghana</label>
-          </td>
-        </tr>
-        <tr>
-          <td><input type="checkbox" class="countryCheck" id="GI" name="GI" value="Gibraltar"><label for="GI">
-              Gibraltar</label></td>
-          <td><input type="checkbox" class="countryCheck" id="GR" name="GR" value="Greece"><label for="GR">
-              Greece</label></td>
-          <td><input type="checkbox" class="countryCheck" id="GL" name="GL" value="Greenland"><label for="GL">
-              Greenland</label></td>
-          <td><input type="checkbox" class="countryCheck" id="GD" name="GD" value="Grenada"><label for="GD">
-              Grenada</label></td>
-          <td><input type="checkbox" class="countryCheck" id="GP" name="GP" value="Guadeloupe"><label for="GP">
-              Guadeloupe</label></td>
-          <td><input type="checkbox" class="countryCheck" id="GU" name="GU" value="Guam"><label for="GU"> Guam</label>
-          </td>
-        </tr>
-        <tr>
-          <td><input type="checkbox" class="countryCheck" id="GT" name="GT" value="Guatemala"><label for="GT">
-              Guatemala</label></td>
-          <td><input type="checkbox" class="countryCheck" id="GG" name="GG" value="Guernsey"><label for="GG">
-              Guernsey</label></td>
-          <td><input type="checkbox" class="countryCheck" id="GN" name="GN" value="Guinea"><label for="GN">
-              Guinea</label></td>
-          <td><input type="checkbox" class="countryCheck" id="GW" name="GW" value="Guinea-Bissau"><label for="GW">
-              Guinea-Bissau</label></td>
-          <td><input type="checkbox" class="countryCheck" id="GY" name="GY" value="Guyana"><label for="GY">
-              Guyana</label></td>
-          <td><input type="checkbox" class="countryCheck" id="HT" name="HT" value="Haiti"><label for="HT"> Haiti</label>
-          </td>
-        </tr>
-        <tr>
-          <td><input type="checkbox" class="countryCheck" id="HM" name="HM"
-              value="Heard Island and McDonald Islands"><label for="HM"> Heard
-              Island
-              and
-              McDonald Islands</label></td>
-          <td><input type="checkbox" class="countryCheck" id="VA" name="VA" value="Holy See (Vatican City State)"><label
-              for="VA"> Holy See
-              (Vatican
-              City
-              State)</label></td>
-          <td><input type="checkbox" class="countryCheck" id="HN" name="HN" value="Honduras"><label for="HN">
-              Honduras</label></td>
-          <td><input type="checkbox" class="countryCheck" id="HK" name="HK" value="Hong Kong"><label for="HK"> Hong
-              Kong</label></td>
-          <td><input type="checkbox" class="countryCheck" id="HU" name="HU" value="Hungary"><label for="HU">
-              Hungary</label></td>
-          <td><input type="checkbox" class="countryCheck" id="IS" name="IS" value="Iceland"><label for="IS">
-              Iceland</label></td>
-        </tr>
-        <tr>
-          <td><input type="checkbox" class="countryCheck" id="IN" name="IN" value="India"><label for="IN"> India</label>
-          </td>
-          <td><input type="checkbox" class="countryCheck" id="ID" name="ID" value="Indonesia"><label for="ID">
-              Indonesia</label></td>
-          <td><input type="checkbox" class="countryCheck" id="IR" name="IR" value="Iran, Islamic Republic of"><label
-              for="IR"> Iran, Islamic
-              Republic
-              of</label></td>
-          <td><input type="checkbox" class="countryCheck" id="IQ" name="IQ" value="Iraq"><label for="IQ"> Iraq</label>
-          </td>
-          <td><input type="checkbox" class="countryCheck" id="IE" name="IE" value="Ireland"><label for="IE">
-              Ireland</label></td>
-          <td><input type="checkbox" class="countryCheck" id="IM" name="IM" value="Isle of Man"><label for="IM"> Isle of
-              Man</label></td>
-        </tr>
-        <tr>
-          <td><input type="checkbox" class="countryCheck" id="IL" name="IL" value="Israel"><label for="IL">
-              Israel</label></td>
-          <td><input type="checkbox" class="countryCheck" id="IT" name="IT" value="Italy"><label for="IT"> Italy</label>
-          </td>
-          <td><input type="checkbox" class="countryCheck" id="JM" name="JM" value="Jamaica"><label for="JM">
-              Jamaica</label></td>
-          <td><input type="checkbox" class="countryCheck" id="JP" name="JP" value="Japan"><label for="JP"> Japan</label>
-          </td>
-          <td><input type="checkbox" class="countryCheck" id="JE" name="JE" value="Jersey"><label for="JE">
-              Jersey</label></td>
-          <td><input type="checkbox" class="countryCheck" id="JO" name="JO" value="Jordan"><label for="JO">
-              Jordan</label></td>
-        </tr>
-        <tr>
-          <td><input type="checkbox" class="countryCheck" id="KZ" name="KZ" value="Kazakhstan"><label for="KZ">
-              Kazakhstan</label></td>
-          <td><input type="checkbox" class="countryCheck" id="KE" name="KE" value="Kenya"><label for="KE"> Kenya</label>
-          </td>
-          <td><input type="checkbox" class="countryCheck" id="KI" name="KI" value="Kiribati"><label for="KI">
-              Kiribati</label></td>
-          <td><input type="checkbox" class="countryCheck" id="KP" name="KP"
-              value="Korea, Democratic People's Republic of"><label for="KP">Korea,
-              Democratic People's Republic of</label></td>
-          <td><input type="checkbox" class="countryCheck" id="KR" name="KR" value="Korea, Republic of"><label for="KR">
-              Korea, Republic
-              of</label>
-          </td>
-          <td><input type="checkbox" class="countryCheck" id="KW" name="KW" value="Kuwait"><label for="KW">
-              Kuwait</label></td>
-        </tr>
-        <tr>
-          <td><input type="checkbox" class="countryCheck" id="KG" name="KG" value="Kyrgyzstan"><label for="KG">
-              Kyrgyzstan</label></td>
-          <td><input type="checkbox" class="countryCheck" id="LA" name="LA"
-              value="Lao People's Democratic Republic"><label for="LA"> Lao
-              People's
-              Democratic Republic</label></td>
-          <td><input type="checkbox" class="countryCheck" id="LV" name="LV" value="Latvia"><label for="LV">
-              Latvia</label></td>
-          <td><input type="checkbox" class="countryCheck" id="LB" name="LB" value="Lebanon"><label for="LB">
-              Lebanon</label></td>
-          <td><input type="checkbox" class="countryCheck" id="LS" name="LS" value="Lesotho"><label for="LS">
-              Lesotho</label></td>
-          <td><input type="checkbox" class="countryCheck" id="LR" name="LR" value="Liberia"><label for="LR">
-              Liberia</label></td>
-        </tr>
-        <tr>
-          <td><input type="checkbox" class="countryCheck" id="LY" name="LY" value="Libya"><label for="LY"> Libya</label>
-          </td>
-          <td><input type="checkbox" class="countryCheck" id="LI" name="LI" value="Liechtenstein"><label for="LI">
-              Liechtenstein</label></td>
-          <td><input type="checkbox" class="countryCheck" id="LT" name="LT" value="Lithuania"><label for="LT">
-              Lithuania</label></td>
-          <td><input type="checkbox" class="countryCheck" id="LU" name="LU" value="Luxembourg"><label for="LU">
-              Luxembourg</label></td>
-          <td><input type="checkbox" class="countryCheck" id="MO" name="MO" value="Macao"><label for="MO"> Macao</label>
-          </td>
-          <td><input type="checkbox" class="countryCheck" id="MK" name="MK"
-              value="Macedonia, the former Yugoslav Republic of"><label for="MK">Macedonia,
-              the former Yugoslav Republic of</label></td>
-        </tr>
-        <tr>
-          <td><input type="checkbox" class="countryCheck" id="MG" name="MG" value="Madagascar"><label for="MG">
-              Madagascar</label></td>
-          <td><input type="checkbox" class="countryCheck" id="MW" name="MW" value="Malawi"><label for="MW">
-              Malawi</label></td>
-          <td><input type="checkbox" class="countryCheck" id="MY" name="MY" value="Malaysia"><label for="MY">
-              Malaysia</label></td>
-          <td><input type="checkbox" class="countryCheck" id="MV" name="MV" value="Maldives"><label for="MV">
-              Maldives</label></td>
-          <td><input type="checkbox" class="countryCheck" id="ML" name="ML" value="Mali"><label for="ML"> Mali</label>
-          </td>
-          <td><input type="checkbox" class="countryCheck" id="MT" name="MT" value="Malta"><label for="MT"> Malta</label>
-          </td>
-        </tr>
-        <tr>
-          <td><input type="checkbox" class="countryCheck" id="MH" name="MH" value="Marshall Islands"><label for="MH">
-              Marshall
-              Islands</label>
-          </td>
-          <td><input type="checkbox" class="countryCheck" id="MQ" name="MQ" value="Martinique"><label for="MQ">
-              Martinique</label></td>
-          <td><input type="checkbox" class="countryCheck" id="MR" name="MR" value="Mauritania"><label for="MR">
-              Mauritania</label></td>
-          <td><input type="checkbox" class="countryCheck" id="MU" name="MU" value="Mauritius"><label for="MU">
-              Mauritius</label></td>
-          <td><input type="checkbox" class="countryCheck" id="YT" name="YT" value="Mayotte"><label for="YT">
-              Mayotte</label></td>
-          <td><input type="checkbox" class="countryCheck" id="MX" name="MX" value="Mexico"><label for="MX">
-              Mexico</label></td>
-        </tr>
-        <tr>
-          <td><input type="checkbox" class="countryCheck" id="FM" name="FM"
-              value="Micronesia, Federated States of"><label for="FM">
-              Micronesia,
-              Federated
-              States of</label></td>
-          <td><input type="checkbox" class="countryCheck" id="MD" name="MD" value="Moldova, Republic of"><label
-              for="MD"> Moldova, Republic
-              of</label></td>
-          <td><input type="checkbox" class="countryCheck" id="MC" name="MC" value="Monaco"><label for="MC">
-              Monaco</label></td>
-          <td><input type="checkbox" class="countryCheck" id="MN" name="MN" value="Mongolia"><label for="MN">
-              Mongolia</label></td>
-          <td><input type="checkbox" class="countryCheck" id="ME" name="ME" value="Montenegro"><label for="ME">
-              Montenegro</label></td>
-          <td><input type="checkbox" class="countryCheck" id="MS" name="MS" value="Montserrat"><label for="MS">
-              Montserrat</label></td>
-        </tr>
-        <tr>
-          <td><input type="checkbox" class="countryCheck" id="MA" name="MA" value="Morocco"><label for="MA">
-              Morocco</label></td>
-          <td><input type="checkbox" class="countryCheck" id="MZ" name="MZ" value="Mozambique"><label for="MZ">
-              Mozambique</label></td>
-          <td><input type="checkbox" class="countryCheck" id="MM" name="MM" value="Myanmar"><label for="MM">
-              Myanmar</label></td>
-          <td><input type="checkbox" class="countryCheck" id="NA" name="NA" value="Namibia"><label for="NA">
-              Namibia</label></td>
-          <td><input type="checkbox" class="countryCheck" id="NR" name="NR" value="Nauru"><label for="NR"> Nauru</label>
-          </td>
-          <td><input type="checkbox" class="countryCheck" id="NP" name="NP" value="Nepal"><label for="NP"> Nepal</label>
-          </td>
-        </tr>
-        <tr>
-          <td><input type="checkbox" class="countryCheck" id="NL" name="NL" value="Netherlands"><label for="NL">
-              Netherlands</label></td>
-          <td><input type="checkbox" class="countryCheck" id="NC" name="NC" value="New Caledonia"><label for="NC"> New
-              Caledonia</label></td>
-          <td><input type="checkbox" class="countryCheck" id="NZ" name="NZ" value="New Zealand"><label for="NZ"> New
-              Zealand</label></td>
-          <td><input type="checkbox" class="countryCheck" id="NI" name="NI" value="Nicaragua"><label for="NI">
-              Nicaragua</label></td>
-          <td><input type="checkbox" class="countryCheck" id="NE" name="NE" value="Niger"><label for="NE"> Niger</label>
-          </td>
-          <td><input type="checkbox" class="countryCheck" id="NG" name="NG" value="Nigeria"><label for="NG">
-              Nigeria</label></td>
-        </tr>
-        <tr>
-          <td><input type="checkbox" class="countryCheck" id="NU" name="NU" value="Niue"><label for="NU"> Niue</label>
-          </td>
-          <td><input type="checkbox" class="countryCheck" id="NF" name="NF" value="Norfolk Island"><label for="NF">
-              Norfolk Island</label>
-          </td>
-          <td><input type="checkbox" class="countryCheck" id="MP" name="MP" value="Northern Mariana Islands"><label
-              for="MP"> Northern
-              Mariana
-              Islands</label></td>
-          <td><input type="checkbox" class="countryCheck" id="NO" name="NO" value="Norway"><label for="NO">
-              Norway</label></td>
-          <td><input type="checkbox" class="countryCheck" id="OM" name="OM" value="Oman"><label for="OM"> Oman</label>
-          </td>
-          <td><input type="checkbox" class="countryCheck" id="PK" name="PK" value="Pakistan"><label for="PK">
-              Pakistan</label></td>
-        </tr>
-        <tr>
-          <td><input type="checkbox" class="countryCheck" id="PW" name="PW" value="Palau"><label for="PW"> Palau</label>
-          </td>
-          <td><input type="checkbox" class="countryCheck" id="PS" name="PS"
-              value="Palestinian Territory, Occupied"><label for="PS">
-              Palestinian
-              Territory, Occupied</label></td>
-          <td><input type="checkbox" class="countryCheck" id="PA" name="PA" value="Panama"><label for="PA">
-              Panama</label></td>
-          <td><input type="checkbox" class="countryCheck" id="PG" name="PG" value="Papua New Guinea"><label for="PG">
-              Papua New
-              Guinea</label>
-          </td>
-          <td><input type="checkbox" class="countryCheck" id="PY" name="PY" value="Paraguay"><label for="PY">
-              Paraguay</label></td>
-          <td><input type="checkbox" class="countryCheck" id="PE" name="PE" value="Peru"><label for="PE"> Peru</label>
-          </td>
-        </tr>
-        <tr>
-          <td><input type="checkbox" class="countryCheck" id="PH" name="PH" value="Philippines"><label for="PH">
-              Philippines</label></td>
-          <td><input type="checkbox" class="countryCheck" id="PN" name="PN" value="Pitcairn"><label for="PN">
-              Pitcairn</label></td>
-          <td><input type="checkbox" class="countryCheck" id="PL" name="PL" value="Poland"><label for="PL">
-              Poland</label></td>
-          <td><input type="checkbox" class="countryCheck" id="PT" name="PT" value="Portugal"><label for="PT">
-              Portugal</label></td>
-          <td><input type="checkbox" class="countryCheck" id="PR" name="PR" value="Puerto Rico"><label for="PR"> Puerto
-              Rico</label></td>
-          <td><input type="checkbox" class="countryCheck" id="QA" name="QA" value="Qatar"><label for="QA"> Qatar</label>
-          </td>
-        </tr>
-        <tr>
-          <td><input type="checkbox" class="countryCheck" id="RE" name="RE" value="Réunion"><label for="RE">
-              Réunion</label></td>
-          <td><input type="checkbox" class="countryCheck" id="RO" name="RO" value="Romania"><label for="RO">
-              Romania</label></td>
-          <td><input type="checkbox" class="countryCheck" id="RU" name="RU" value="Russian Federation"><label for="RU">
-              Russian
-              Federation</label>
-          </td>
-          <td><input type="checkbox" class="countryCheck" id="RW" name="RW" value="Rwanda"><label for="RW">
-              Rwanda</label></td>
-          <td><input type="checkbox" class="countryCheck" id="BL" name="BL" value="Saint Barthélemy"><label for="BL">
-              Saint
-              Barthélemy</label>
-          </td>
-          <td><input type="checkbox" class="countryCheck" id="SH" name="SH"
-              value="Saint Helena, Ascension and Tristan da Cunha"><label for="SH">Saint
-              Helena, Ascension and Tristan da Cunha</label></td>
-        </tr>
-        <tr>
-          <td><input type="checkbox" class="countryCheck" id="KN" name="KN" value="Saint Kitts and Nevis"><label
-              for="KN"> Saint Kitts and
-              Nevis</label></td>
-          <td><input type="checkbox" class="countryCheck" id="LC" name="LC" value="Saint Lucia"><label for="LC"> Saint
-              Lucia</label></td>
-          <td><input type="checkbox" class="countryCheck" id="MF" name="MF" value="Saint Martin (French part)"><label
-              for="MF"> Saint Martin
-              (French
-              part)</label></td>
-          <td><input type="checkbox" class="countryCheck" id="PM" name="PM" value="Saint Pierre and Miquelon"><label
-              for="PM"> Saint Pierre
-              and
-              Miquelon</label></td>
-          <td><input type="checkbox" class="countryCheck" id="VC" name="VC"
-              value="Saint Vincent and the Grenadines"><label for="VC"> Saint
-              Vincent
-              and
-              the Grenadines</label></td>
-          <td><input type="checkbox" class="countryCheck" id="WS" name="WS" value="Samoa"><label for="WS"> Samoa</label>
-          </td>
-        </tr>
-        <tr>
-          <td><input type="checkbox" class="countryCheck" id="SM" name="SM" value="San Marino"><label for="SM"> San
-              Marino</label></td>
-          <td><input type="checkbox" class="countryCheck" id="ST" name="ST" value="Sao Tome and Principe"><label
-              for="ST"> Sao Tome and
-              Principe</label></td>
-          <td><input type="checkbox" class="countryCheck" id="SA" name="SA" value="Saudi Arabia"><label for="SA"> Saudi
-              Arabia</label></td>
-          <td><input type="checkbox" class="countryCheck" id="SN" name="SN" value="Senegal"><label for="SN">
-              Senegal</label></td>
-          <td><input type="checkbox" class="countryCheck" id="RS" name="RS" value="Serbia"><label for="RS">
-              Serbia</label></td>
-          <td><input type="checkbox" class="countryCheck" id="SC" name="SC" value="Seychelles"><label for="SC">
-              Seychelles</label></td>
-        </tr>
-        <tr>
-          <td><input type="checkbox" class="countryCheck" id="SL" name="SL" value="Sierra Leone"><label for="SL"> Sierra
-              Leone</label></td>
-          <td><input type="checkbox" class="countryCheck" id="SG" name="SG" value="Singapore"><label for="SG">
-              Singapore</label></td>
-          <td><input type="checkbox" class="countryCheck" id="SX" name="SX" value="Sint Maarten (Dutch part)"><label
-              for="SX"> Sint Maarten
-              (Dutch
-              part)</label></td>
-          <td><input type="checkbox" class="countryCheck" id="SK" name="SK" value="Slovakia"><label for="SK">
-              Slovakia</label></td>
-          <td><input type="checkbox" class="countryCheck" id="SI" name="SI" value="Slovenia"><label for="SI">
-              Slovenia</label></td>
-          <td><input type="checkbox" class="countryCheck" id="SB" name="SB" value="Solomon Islands"><label for="SB">
-              Solomon Islands</label>
-          </td>
-        </tr>
-        <tr>
-          <td><input type="checkbox" class="countryCheck" id="SO" name="SO" value="Somalia"><label for="SO">
-              Somalia</label></td>
-          <td><input type="checkbox" class="countryCheck" id="ZA" name="ZA" value="South Africa"><label for="ZA"> South
-              Africa</label></td>
-          <td><input type="checkbox" class="countryCheck" id="GS" name="GS"
-              value="South Georgia and the South Sandwich Islands"><label for="GS">South
-              Georgia and the South Sandwich Islands</label></td>
-          <td><input type="checkbox" class="countryCheck" id="SS" name="SS" value="South Sudan"><label for="SS"> South
-              Sudan</label></td>
-          <td><input type="checkbox" class="countryCheck" id="ES" name="ES" value="Spain"><label for="ES"> Spain</label>
-          </td>
-          <td><input type="checkbox" class="countryCheck" id="LK" name="LK" value="Sri Lanka"><label for="LK"> Sri
-              Lanka</label></td>
-        </tr>
-        <tr>
-          <td><input type="checkbox" class="countryCheck" id="SD" name="SD" value="Sudan"><label for="SD"> Sudan</label>
-          </td>
-          <td><input type="checkbox" class="countryCheck" id="SR" name="SR" value="Suriname"><label for="SR">
-              Suriname</label></td>
-          <td><input type="checkbox" class="countryCheck" id="SJ" name="SJ" value="Svalbard and Jan Mayen"><label
-              for="SJ"> Svalbard and Jan
-              Mayen</label></td>
-          <td><input type="checkbox" class="countryCheck" id="SZ" name="SZ" value="Swaziland"><label for="SZ">
-              Swaziland</label></td>
-          <td><input type="checkbox" class="countryCheck" id="SE" name="SE" value="Sweden"><label for="SE">
-              Sweden</label></td>
-          <td><input type="checkbox" class="countryCheck" id="CH" name="CH" value="Switzerland"><label for="CH">
-              Switzerland</label></td>
-        </tr>
-        <tr>
-          <td><input type="checkbox" class="countryCheck" id="SY" name="SY" value="Syrian Arab Republic"><label
-              for="SY"> Syrian Arab
-              Republic</label></td>
-          <td><input type="checkbox" class="countryCheck" id="TW" name="TW" value="Taiwan, Province of China"><label
-              for="TW"> Taiwan,
-              Province
-              of
-              China</label></td>
-          <td><input type="checkbox" class="countryCheck" id="TJ" name="TJ" value="Tajikistan"><label for="TJ">
-              Tajikistan</label></td>
-          <td><input type="checkbox" class="countryCheck" id="TZ" name="TZ" value="Tanzania, United Republic of"><label
-              for="TZ"> Tanzania,
-              United
-              Republic of</label></td>
-          <td><input type="checkbox" class="countryCheck" id="TH" name="TH" value="Thailand"><label for="TH">
-              Thailand</label></td>
-          <td><input type="checkbox" class="countryCheck" id="TL" name="TL" value="Timor-Leste"><label for="TL">
-              Timor-Leste</label></td>
-        </tr>
-        <tr>
-          <td><input type="checkbox" class="countryCheck" id="TG" name="TG" value="Togo"><label for="TG"> Togo</label>
-          </td>
-          <td><input type="checkbox" class="countryCheck" id="TK" name="TK" value="Tokelau"><label for="TK">
-              Tokelau</label></td>
-          <td><input type="checkbox" class="countryCheck" id="TO" name="TO" value="Tonga"><label for="TO"> Tonga</label>
-          </td>
-          <td><input type="checkbox" class="countryCheck" id="TT" name="TT" value="Trinidad and Tobago"><label for="TT">
-              Trinidad and
-              Tobago</label></td>
-          <td><input type="checkbox" class="countryCheck" id="TN" name="TN" value="Tunisia"><label for="TN">
-              Tunisia</label></td>
-          <td><input type="checkbox" class="countryCheck" id="TR" name="TR" value="Turkey"><label for="TR">
-              Turkey</label></td>
-        </tr>
-        <tr>
-          <td><input type="checkbox" class="countryCheck" id="TM" name="TM" value="Turkmenistan"><label for="TM">
-              Turkmenistan</label></td>
-          <td><input type="checkbox" class="countryCheck" id="TC" name="TC" value="Turks and Caicos Islands"><label
-              for="TC"> Turks and
-              Caicos
-              Islands</label></td>
-          <td><input type="checkbox" class="countryCheck" id="TV" name="TV" value="Tuvalu"><label for="TV">
-              Tuvalu</label></td>
-          <td><input type="checkbox" class="countryCheck" id="UG" name="UG" value="Uganda"><label for="UG">
-              Uganda</label></td>
-          <td><input type="checkbox" class="countryCheck" id="UA" name="UA" value="Ukraine"><label for="UA">
-              Ukraine</label></td>
-          <td><input type="checkbox" class="countryCheck" id="AE" name="AE" value="United Arab Emirates"><label
-              for="AE"> United Arab
-              Emirates</label></td>
-        </tr>
-        <tr>
-          <td><input type="checkbox" class="countryCheck" id="GB" name="GB" value="United Kingdom"><label for="GB">
-              United Kingdom</label>
-          </td>
-          <td><input type="checkbox" class="countryCheck" id="US" name="US" value="United States"><label for="US">
-              United States</label></td>
-          <td><input type="checkbox" class="countryCheck" id="UM" name="UM"
-              value="United States Minor Outlying Islands"><label for="UM">
-              United
-              States
-              Minor Outlying Islands</label></td>
-          <td><input type="checkbox" class="countryCheck" id="UY" name="UY" value="Uruguay"><label for="UY">
-              Uruguay</label></td>
-          <td><input type="checkbox" class="countryCheck" id="UZ" name="UZ" value="Uzbekistan"><label for="UZ">
-              Uzbekistan</label></td>
-          <td><input type="checkbox" class="countryCheck" id="VU" name="VU" value="Vanuatu"><label for="VU">
-              Vanuatu</label></td>
-        </tr>
-        <tr>
-          <td><input type="checkbox" class="countryCheck" id="VE" name="VE"
-              value="Venezuela, Bolivarian Republic of"><label for="VE">Venezuela,
-              Bolivarian Republic of</label></td>
-          <td><input type="checkbox" class="countryCheck" id="VN" name="VN" value="Viet Nam"><label for="VN"> Viet
-              Nam</label></td>
-          <td><input type="checkbox" class="countryCheck" id="VG" name="VG" value="Virgin Islands, British"><label
-              for="VG"> Virgin Islands,
-              British</label></td>
-          <td><input type="checkbox" class="countryCheck" id="VI" name="VI" value="Virgin Islands, U.S."><label
-              for="VI"> Virgin Islands,
-              U.S.</label></td>
-          <td><input type="checkbox" class="countryCheck" id="WF" name="WF" value="Wallis and Futuna"><label for="WF">
-              Wallis and
-              Futuna</label>
-          </td>
-          <td><input type="checkbox" class="countryCheck" id="EH" name="EH" value="Western Sahara"><label for="EH">
-              Western Sahara</label>
-          </td>
-        </tr>
-        <tr>
-          <td><input type="checkbox" class="countryCheck" id="YE" name="YE" value="Yemen"><label for="YE"> Yemen</label>
-          </td>
-          <td><input type="checkbox" class="countryCheck" id="ZM" name="ZM" value="Zambia"><label for="ZM">
-              Zambia</label></td>
-          <td><input type="checkbox" class="countryCheck" id="ZW" name="ZW" value="Zimbabwe"><label for="ZW">
-              Zimbabwe</label></td>
-        </tr>
-      </table>
+    <div id="wrap">
+        <h2 id="link-header">"Рабочая" ссылка</h2>
+        <div id="link-list">
+            <input id="link-input" type="text" placeholder="Вставьте ссылку...">
+            <div id="savebutton" onclick="saveChanges()">
+                <p id="buttontext">Сохранить изменения</p>
+            </div>
+        </div>
+        <h2 id="countries-header">Страны дистрибуции</h2>
+        <div id="countries-list">
+            <table>
+                <tr>
+                    <td><input type="checkbox" class="countryCheck" id="AF" name="AF" value="Afghanistan"><label
+                            for="AF">
+                            Afghanistan</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="AX" name="AX" value="Åland Islands"><label
+                            for="AX"> Åland
+                            Islands</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="AL" name="AL" value="Albania"><label for="AL">
+                            Albania</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="DZ" name="DZ" value="Algeria"><label for="DZ">
+                            Algeria</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="AS" name="AS" value="American Samoa"><label
+                            for="AS">
+                            American Samoa</label>
+                    </td>
+                    <td><input type="checkbox" class="countryCheck" id="AD" name="AD" value="Andorra"><label for="AD">
+                            Andorra</label></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="countryCheck" id="AO" name="AO" value="Angola"><label for="AO">
+                            Angola</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="AI" name="AI" value="Anguilla"><label for="AI">
+                            Anguilla</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="AQ" name="AQ" value="Antarctica"><label
+                            for="AQ">
+                            Antarctica</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="AG" name="AG" value="Antigua and Barbuda"><label
+                            for="AG">
+                            Antigua and
+                            Barbuda</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="AR" name="AR" value="Argentina"><label for="AR">
+                            Argentina</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="AM" name="AM" value="Armenia"><label for="AM">
+                            Armenia</label></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="countryCheck" id="AW" name="AW" value="Aruba"><label for="AW">
+                            Aruba</label>
+                    </td>
+                    <td><input type="checkbox" class="countryCheck" id="AU" name="AU" value="Australia"><label for="AU">
+                            Australia</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="AT" name="AT" value="Austria"><label for="AT">
+                            Austria</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="AZ" name="AZ" value="Azerbaijan"><label
+                            for="AZ">
+                            Azerbaijan</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="BS" name="BS" value="Bahamas"><label for="BS">
+                            Bahamas</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="BH" name="BH" value="Bahrain"><label for="BH">
+                            Bahrain</label></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="countryCheck" id="BD" name="BD" value="Bangladesh"><label
+                            for="BD">
+                            Bangladesh</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="BB" name="BB" value="Barbados"><label for="BB">
+                            Barbados</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="BY" name="BY" value="Belarus"><label for="BY">
+                            Belarus</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="BE" name="BE" value="Belgium"><label for="BE">
+                            Belgium</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="BZ" name="BZ" value="Belize"><label for="BZ">
+                            Belize</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="BJ" name="BJ" value="Benin"><label for="BJ">
+                            Benin</label>
+                    </td>
+                </tr>
+                <tr>
+                <tr>
+                    <td><input type="checkbox" class="countryCheck" id="BM" name="BM" value="Bermuda"><label for="BM">
+                            Bermuda</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="BT" name="BT" value="Bhutan"><label for="BT">
+                            Bhutan</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="BO" name="BO"
+                            value="Bolivia, Plurinational State of"><label for="BO"> Bolivia,
+                            Plurinational State of</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="BQ" name="BQ"
+                            value="Bonaire, Sint Eustatius and Saba"><label for="BQ">
+                            Bonaire,
+                            Sint
+                            Eustatius and Saba</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="BA" name="BA"
+                            value="Bosnia and Herzegovina"><label for="BA"> Bosnia and
+                            Herzegovina</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="BW" name="BW" value="Botswana"><label for="BW">
+                            Botswana</label></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="countryCheck" id="BV" name="BV" value="Bouvet Island"><label
+                            for="BV">
+                            Bouvet Island</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="BR" name="BR" value="Brazil"><label for="BR">
+                            Brazil</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="IO" name="IO"
+                            value="British Indian Ocean Territory"><label for="IO"> British
+                            Indian
+                            Ocean
+                            Territory</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="BN" name="BN" value="Brunei Darussalam"><label
+                            for="BN">
+                            Brunei
+                            Darussalam</label>
+                    </td>
+                    <td><input type="checkbox" class="countryCheck" id="BG" name="BG" value="Bulgaria"><label for="BG">
+                            Bulgaria</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="BF" name="BF" value="Burkina Faso"><label
+                            for="BF">
+                            Burkina Faso</label></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="countryCheck" id="BI" name="BI" value="Burundi"><label for="BI">
+                            Burundi</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="KH" name="KH" value="Cambodia"><label for="KH">
+                            Cambodia</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="CM" name="CM" value="Cameroon"><label for="CM">
+                            Cameroon</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="CA" name="CA" value="Canada"><label for="CA">
+                            Canada</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="CV" name="CV" value="Cape Verde"><label
+                            for="CV"> Cape
+                            Verde</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="KY" name="KY" value="Cayman Islands"><label
+                            for="KY">
+                            Cayman Islands</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="countryCheck" id="CF" name="CF"
+                            value="Central African Republic"><label for="CF"> Central African
+                            Republic</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="TD" name="TD" value="Chad"><label for="TD">
+                            Chad</label>
+                    </td>
+                    <td><input type="checkbox" class="countryCheck" id="CL" name="CL" value="Chile"><label for="CL">
+                            Chile</label>
+                    </td>
+                    <td><input type="checkbox" class="countryCheck" id="CN" name="CN" value="China"><label for="CN">
+                            China</label>
+                    </td>
+                    <td><input type="checkbox" class="countryCheck" id="CX" name="CX" value="Christmas Island"><label
+                            for="CX">
+                            Christmas
+                            Island</label>
+                    </td>
+                    <td><input type="checkbox" class="countryCheck" id="CC" name="CC"
+                            value="Cocos (Keeling) Islands"><label for="CC"> Cocos (Keeling)
+                            Islands</label></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="countryCheck" id="CO" name="CO" value="Colombia"><label for="CO">
+                            Colombia</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="KM" name="KM" value="Comoros"><label for="KM">
+                            Comoros</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="CG" name="CG" value="Congo"><label for="CG">
+                            Congo</label>
+                    </td>
+                    <td><input type="checkbox" class="countryCheck" id="CD" name="CD"
+                            value="Congo, the Democratic Republic of the"><label for="CD">Congo,
+                            the
+                            Democratic Republic of the</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="CK" name="CK" value="Cook Islands"><label
+                            for="CK"> Cook
+                            Islands</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="CR" name="CR" value="Costa Rica"><label
+                            for="CR"> Costa
+                            Rica</label></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="countryCheck" id="CI" name="CI" value="Côte d'Ivoire"><label
+                            for="CI"> Côte
+                            d'Ivoire</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="HR" name="HR" value="Croatia"><label for="HR">
+                            Croatia</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="CU" name="CU" value="Cuba"><label for="CU">
+                            Cuba</label>
+                    </td>
+                    <td><input type="checkbox" class="countryCheck" id="CW" name="CW" value="Curaçao"><label for="CW">
+                            Curaçao</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="CY" name="CY" value="Cyprus"><label for="CY">
+                            Cyprus</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="CZ" name="CZ" value="Czech Republic"><label
+                            for="CZ">
+                            Czech Republic</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="countryCheck" id="DK" name="DK" value="Denmark"><label for="DK">
+                            Denmark</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="DJ" name="DJ" value="Djibouti"><label for="DJ">
+                            Djibouti</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="DM" name="DM" value="Dominica"><label for="DM">
+                            Dominica</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="DO" name="DO" value="Dominican Republic"><label
+                            for="DO">
+                            Dominican
+                            Republic</label>
+                    </td>
+                    <td><input type="checkbox" class="countryCheck" id="EC" name="EC" value="Ecuador"><label for="EC">
+                            Ecuador</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="EG" name="EG" value="Egypt"><label for="EG">
+                            Egypt</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="countryCheck" id="SV" name="SV" value="El Salvador"><label
+                            for="SV"> El
+                            Salvador</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="GQ" name="GQ" value="Equatorial Guinea"><label
+                            for="GQ">
+                            Equatorial
+                            Guinea</label>
+                    </td>
+                    <td><input type="checkbox" class="countryCheck" id="ER" name="ER" value="Eritrea"><label for="ER">
+                            Eritrea</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="EE" name="EE" value="Estonia"><label for="EE">
+                            Estonia</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="ET" name="ET" value="Ethiopia"><label for="ET">
+                            Ethiopia</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="FK" name="FK"
+                            value="Falkland Islands (Malvinas)"><label for="FK"> Falkland
+                            Islands
+                            (Malvinas)</label></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="countryCheck" id="FO" name="FO" value="Faroe Islands"><label
+                            for="FO"> Faroe
+                            Islands</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="FJ" name="FJ" value="Fiji"><label for="FJ">
+                            Fiji</label>
+                    </td>
+                    <td><input type="checkbox" class="countryCheck" id="FI" name="FI" value="Finland"><label for="FI">
+                            Finland</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="FR" name="FR" value="France"><label for="FR">
+                            France</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="GF" name="GF" value="French Guiana"><label
+                            for="GF">
+                            French Guiana</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="PF" name="PF" value="French Polynesia"><label
+                            for="PF">
+                            French
+                            Polynesia</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="countryCheck" id="TF" name="TF"
+                            value="French Southern Territories"><label for="TF"> French
+                            Southern
+                            Territories</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="GA" name="GA" value="Gabon"><label for="GA">
+                            Gabon</label>
+                    </td>
+                    <td><input type="checkbox" class="countryCheck" id="GM" name="GM" value="Gambia"><label for="GM">
+                            Gambia</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="GE" name="GE" value="Georgia"><label for="GE">
+                            Georgia</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="DE" name="DE" value="Germany"><label for="DE">
+                            Germany</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="GH" name="GH" value="Ghana"><label for="GH">
+                            Ghana</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="countryCheck" id="GI" name="GI" value="Gibraltar"><label for="GI">
+                            Gibraltar</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="GR" name="GR" value="Greece"><label for="GR">
+                            Greece</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="GL" name="GL" value="Greenland"><label for="GL">
+                            Greenland</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="GD" name="GD" value="Grenada"><label for="GD">
+                            Grenada</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="GP" name="GP" value="Guadeloupe"><label
+                            for="GP">
+                            Guadeloupe</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="GU" name="GU" value="Guam"><label for="GU">
+                            Guam</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="countryCheck" id="GT" name="GT" value="Guatemala"><label for="GT">
+                            Guatemala</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="GG" name="GG" value="Guernsey"><label for="GG">
+                            Guernsey</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="GN" name="GN" value="Guinea"><label for="GN">
+                            Guinea</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="GW" name="GW" value="Guinea-Bissau"><label
+                            for="GW">
+                            Guinea-Bissau</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="GY" name="GY" value="Guyana"><label for="GY">
+                            Guyana</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="HT" name="HT" value="Haiti"><label for="HT">
+                            Haiti</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="countryCheck" id="HM" name="HM"
+                            value="Heard Island and McDonald Islands"><label for="HM"> Heard
+                            Island
+                            and
+                            McDonald Islands</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="VA" name="VA"
+                            value="Holy See (Vatican City State)"><label for="VA"> Holy See
+                            (Vatican
+                            City
+                            State)</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="HN" name="HN" value="Honduras"><label for="HN">
+                            Honduras</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="HK" name="HK" value="Hong Kong"><label for="HK">
+                            Hong
+                            Kong</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="HU" name="HU" value="Hungary"><label for="HU">
+                            Hungary</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="IS" name="IS" value="Iceland"><label for="IS">
+                            Iceland</label></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="countryCheck" id="IN" name="IN" value="India"><label for="IN">
+                            India</label>
+                    </td>
+                    <td><input type="checkbox" class="countryCheck" id="ID" name="ID" value="Indonesia"><label for="ID">
+                            Indonesia</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="IR" name="IR"
+                            value="Iran, Islamic Republic of"><label for="IR"> Iran, Islamic
+                            Republic
+                            of</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="IQ" name="IQ" value="Iraq"><label for="IQ">
+                            Iraq</label>
+                    </td>
+                    <td><input type="checkbox" class="countryCheck" id="IE" name="IE" value="Ireland"><label for="IE">
+                            Ireland</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="IM" name="IM" value="Isle of Man"><label
+                            for="IM"> Isle of
+                            Man</label></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="countryCheck" id="IL" name="IL" value="Israel"><label for="IL">
+                            Israel</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="IT" name="IT" value="Italy"><label for="IT">
+                            Italy</label>
+                    </td>
+                    <td><input type="checkbox" class="countryCheck" id="JM" name="JM" value="Jamaica"><label for="JM">
+                            Jamaica</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="JP" name="JP" value="Japan"><label for="JP">
+                            Japan</label>
+                    </td>
+                    <td><input type="checkbox" class="countryCheck" id="JE" name="JE" value="Jersey"><label for="JE">
+                            Jersey</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="JO" name="JO" value="Jordan"><label for="JO">
+                            Jordan</label></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="countryCheck" id="KZ" name="KZ" value="Kazakhstan"><label
+                            for="KZ">
+                            Kazakhstan</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="KE" name="KE" value="Kenya"><label for="KE">
+                            Kenya</label>
+                    </td>
+                    <td><input type="checkbox" class="countryCheck" id="KI" name="KI" value="Kiribati"><label for="KI">
+                            Kiribati</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="KP" name="KP"
+                            value="Korea, Democratic People's Republic of"><label for="KP">Korea,
+                            Democratic People's Republic of</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="KR" name="KR" value="Korea, Republic of"><label
+                            for="KR">
+                            Korea, Republic
+                            of</label>
+                    </td>
+                    <td><input type="checkbox" class="countryCheck" id="KW" name="KW" value="Kuwait"><label for="KW">
+                            Kuwait</label></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="countryCheck" id="KG" name="KG" value="Kyrgyzstan"><label
+                            for="KG">
+                            Kyrgyzstan</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="LA" name="LA"
+                            value="Lao People's Democratic Republic"><label for="LA"> Lao
+                            People's
+                            Democratic Republic</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="LV" name="LV" value="Latvia"><label for="LV">
+                            Latvia</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="LB" name="LB" value="Lebanon"><label for="LB">
+                            Lebanon</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="LS" name="LS" value="Lesotho"><label for="LS">
+                            Lesotho</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="LR" name="LR" value="Liberia"><label for="LR">
+                            Liberia</label></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="countryCheck" id="LY" name="LY" value="Libya"><label for="LY">
+                            Libya</label>
+                    </td>
+                    <td><input type="checkbox" class="countryCheck" id="LI" name="LI" value="Liechtenstein"><label
+                            for="LI">
+                            Liechtenstein</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="LT" name="LT" value="Lithuania"><label for="LT">
+                            Lithuania</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="LU" name="LU" value="Luxembourg"><label
+                            for="LU">
+                            Luxembourg</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="MO" name="MO" value="Macao"><label for="MO">
+                            Macao</label>
+                    </td>
+                    <td><input type="checkbox" class="countryCheck" id="MK" name="MK"
+                            value="Macedonia, the former Yugoslav Republic of"><label for="MK">Macedonia,
+                            the former Yugoslav Republic of</label></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="countryCheck" id="MG" name="MG" value="Madagascar"><label
+                            for="MG">
+                            Madagascar</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="MW" name="MW" value="Malawi"><label for="MW">
+                            Malawi</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="MY" name="MY" value="Malaysia"><label for="MY">
+                            Malaysia</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="MV" name="MV" value="Maldives"><label for="MV">
+                            Maldives</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="ML" name="ML" value="Mali"><label for="ML">
+                            Mali</label>
+                    </td>
+                    <td><input type="checkbox" class="countryCheck" id="MT" name="MT" value="Malta"><label for="MT">
+                            Malta</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="countryCheck" id="MH" name="MH" value="Marshall Islands"><label
+                            for="MH">
+                            Marshall
+                            Islands</label>
+                    </td>
+                    <td><input type="checkbox" class="countryCheck" id="MQ" name="MQ" value="Martinique"><label
+                            for="MQ">
+                            Martinique</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="MR" name="MR" value="Mauritania"><label
+                            for="MR">
+                            Mauritania</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="MU" name="MU" value="Mauritius"><label for="MU">
+                            Mauritius</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="YT" name="YT" value="Mayotte"><label for="YT">
+                            Mayotte</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="MX" name="MX" value="Mexico"><label for="MX">
+                            Mexico</label></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="countryCheck" id="FM" name="FM"
+                            value="Micronesia, Federated States of"><label for="FM">
+                            Micronesia,
+                            Federated
+                            States of</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="MD" name="MD"
+                            value="Moldova, Republic of"><label for="MD"> Moldova, Republic
+                            of</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="MC" name="MC" value="Monaco"><label for="MC">
+                            Monaco</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="MN" name="MN" value="Mongolia"><label for="MN">
+                            Mongolia</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="ME" name="ME" value="Montenegro"><label
+                            for="ME">
+                            Montenegro</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="MS" name="MS" value="Montserrat"><label
+                            for="MS">
+                            Montserrat</label></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="countryCheck" id="MA" name="MA" value="Morocco"><label for="MA">
+                            Morocco</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="MZ" name="MZ" value="Mozambique"><label
+                            for="MZ">
+                            Mozambique</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="MM" name="MM" value="Myanmar"><label for="MM">
+                            Myanmar</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="NA" name="NA" value="Namibia"><label for="NA">
+                            Namibia</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="NR" name="NR" value="Nauru"><label for="NR">
+                            Nauru</label>
+                    </td>
+                    <td><input type="checkbox" class="countryCheck" id="NP" name="NP" value="Nepal"><label for="NP">
+                            Nepal</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="countryCheck" id="NL" name="NL" value="Netherlands"><label
+                            for="NL">
+                            Netherlands</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="NC" name="NC" value="New Caledonia"><label
+                            for="NC"> New
+                            Caledonia</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="NZ" name="NZ" value="New Zealand"><label
+                            for="NZ"> New
+                            Zealand</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="NI" name="NI" value="Nicaragua"><label for="NI">
+                            Nicaragua</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="NE" name="NE" value="Niger"><label for="NE">
+                            Niger</label>
+                    </td>
+                    <td><input type="checkbox" class="countryCheck" id="NG" name="NG" value="Nigeria"><label for="NG">
+                            Nigeria</label></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="countryCheck" id="NU" name="NU" value="Niue"><label for="NU">
+                            Niue</label>
+                    </td>
+                    <td><input type="checkbox" class="countryCheck" id="NF" name="NF" value="Norfolk Island"><label
+                            for="NF">
+                            Norfolk Island</label>
+                    </td>
+                    <td><input type="checkbox" class="countryCheck" id="MP" name="MP"
+                            value="Northern Mariana Islands"><label for="MP"> Northern
+                            Mariana
+                            Islands</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="NO" name="NO" value="Norway"><label for="NO">
+                            Norway</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="OM" name="OM" value="Oman"><label for="OM">
+                            Oman</label>
+                    </td>
+                    <td><input type="checkbox" class="countryCheck" id="PK" name="PK" value="Pakistan"><label for="PK">
+                            Pakistan</label></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="countryCheck" id="PW" name="PW" value="Palau"><label for="PW">
+                            Palau</label>
+                    </td>
+                    <td><input type="checkbox" class="countryCheck" id="PS" name="PS"
+                            value="Palestinian Territory, Occupied"><label for="PS">
+                            Palestinian
+                            Territory, Occupied</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="PA" name="PA" value="Panama"><label for="PA">
+                            Panama</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="PG" name="PG" value="Papua New Guinea"><label
+                            for="PG">
+                            Papua New
+                            Guinea</label>
+                    </td>
+                    <td><input type="checkbox" class="countryCheck" id="PY" name="PY" value="Paraguay"><label for="PY">
+                            Paraguay</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="PE" name="PE" value="Peru"><label for="PE">
+                            Peru</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="countryCheck" id="PH" name="PH" value="Philippines"><label
+                            for="PH">
+                            Philippines</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="PN" name="PN" value="Pitcairn"><label for="PN">
+                            Pitcairn</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="PL" name="PL" value="Poland"><label for="PL">
+                            Poland</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="PT" name="PT" value="Portugal"><label for="PT">
+                            Portugal</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="PR" name="PR" value="Puerto Rico"><label
+                            for="PR"> Puerto
+                            Rico</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="QA" name="QA" value="Qatar"><label for="QA">
+                            Qatar</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="countryCheck" id="RE" name="RE" value="Réunion"><label for="RE">
+                            Réunion</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="RO" name="RO" value="Romania"><label for="RO">
+                            Romania</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="RU" name="RU" value="Russian Federation"><label
+                            for="RU">
+                            Russian
+                            Federation</label>
+                    </td>
+                    <td><input type="checkbox" class="countryCheck" id="RW" name="RW" value="Rwanda"><label for="RW">
+                            Rwanda</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="BL" name="BL" value="Saint Barthélemy"><label
+                            for="BL">
+                            Saint
+                            Barthélemy</label>
+                    </td>
+                    <td><input type="checkbox" class="countryCheck" id="SH" name="SH"
+                            value="Saint Helena, Ascension and Tristan da Cunha"><label for="SH">Saint
+                            Helena, Ascension and Tristan da Cunha</label></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="countryCheck" id="KN" name="KN"
+                            value="Saint Kitts and Nevis"><label for="KN"> Saint Kitts and
+                            Nevis</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="LC" name="LC" value="Saint Lucia"><label
+                            for="LC"> Saint
+                            Lucia</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="MF" name="MF"
+                            value="Saint Martin (French part)"><label for="MF"> Saint Martin
+                            (French
+                            part)</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="PM" name="PM"
+                            value="Saint Pierre and Miquelon"><label for="PM"> Saint Pierre
+                            and
+                            Miquelon</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="VC" name="VC"
+                            value="Saint Vincent and the Grenadines"><label for="VC"> Saint
+                            Vincent
+                            and
+                            the Grenadines</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="WS" name="WS" value="Samoa"><label for="WS">
+                            Samoa</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="countryCheck" id="SM" name="SM" value="San Marino"><label
+                            for="SM"> San
+                            Marino</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="ST" name="ST"
+                            value="Sao Tome and Principe"><label for="ST"> Sao Tome and
+                            Principe</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="SA" name="SA" value="Saudi Arabia"><label
+                            for="SA"> Saudi
+                            Arabia</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="SN" name="SN" value="Senegal"><label for="SN">
+                            Senegal</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="RS" name="RS" value="Serbia"><label for="RS">
+                            Serbia</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="SC" name="SC" value="Seychelles"><label
+                            for="SC">
+                            Seychelles</label></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="countryCheck" id="SL" name="SL" value="Sierra Leone"><label
+                            for="SL"> Sierra
+                            Leone</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="SG" name="SG" value="Singapore"><label for="SG">
+                            Singapore</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="SX" name="SX"
+                            value="Sint Maarten (Dutch part)"><label for="SX"> Sint Maarten
+                            (Dutch
+                            part)</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="SK" name="SK" value="Slovakia"><label for="SK">
+                            Slovakia</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="SI" name="SI" value="Slovenia"><label for="SI">
+                            Slovenia</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="SB" name="SB" value="Solomon Islands"><label
+                            for="SB">
+                            Solomon Islands</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="countryCheck" id="SO" name="SO" value="Somalia"><label for="SO">
+                            Somalia</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="ZA" name="ZA" value="South Africa"><label
+                            for="ZA"> South
+                            Africa</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="GS" name="GS"
+                            value="South Georgia and the South Sandwich Islands"><label for="GS">South
+                            Georgia and the South Sandwich Islands</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="SS" name="SS" value="South Sudan"><label
+                            for="SS"> South
+                            Sudan</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="ES" name="ES" value="Spain"><label for="ES">
+                            Spain</label>
+                    </td>
+                    <td><input type="checkbox" class="countryCheck" id="LK" name="LK" value="Sri Lanka"><label for="LK">
+                            Sri
+                            Lanka</label></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="countryCheck" id="SD" name="SD" value="Sudan"><label for="SD">
+                            Sudan</label>
+                    </td>
+                    <td><input type="checkbox" class="countryCheck" id="SR" name="SR" value="Suriname"><label for="SR">
+                            Suriname</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="SJ" name="SJ"
+                            value="Svalbard and Jan Mayen"><label for="SJ"> Svalbard and Jan
+                            Mayen</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="SZ" name="SZ" value="Swaziland"><label for="SZ">
+                            Swaziland</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="SE" name="SE" value="Sweden"><label for="SE">
+                            Sweden</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="CH" name="CH" value="Switzerland"><label
+                            for="CH">
+                            Switzerland</label></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="countryCheck" id="SY" name="SY"
+                            value="Syrian Arab Republic"><label for="SY"> Syrian Arab
+                            Republic</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="TW" name="TW"
+                            value="Taiwan, Province of China"><label for="TW"> Taiwan,
+                            Province
+                            of
+                            China</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="TJ" name="TJ" value="Tajikistan"><label
+                            for="TJ">
+                            Tajikistan</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="TZ" name="TZ"
+                            value="Tanzania, United Republic of"><label for="TZ"> Tanzania,
+                            United
+                            Republic of</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="TH" name="TH" value="Thailand"><label for="TH">
+                            Thailand</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="TL" name="TL" value="Timor-Leste"><label
+                            for="TL">
+                            Timor-Leste</label></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="countryCheck" id="TG" name="TG" value="Togo"><label for="TG">
+                            Togo</label>
+                    </td>
+                    <td><input type="checkbox" class="countryCheck" id="TK" name="TK" value="Tokelau"><label for="TK">
+                            Tokelau</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="TO" name="TO" value="Tonga"><label for="TO">
+                            Tonga</label>
+                    </td>
+                    <td><input type="checkbox" class="countryCheck" id="TT" name="TT" value="Trinidad and Tobago"><label
+                            for="TT">
+                            Trinidad and
+                            Tobago</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="TN" name="TN" value="Tunisia"><label for="TN">
+                            Tunisia</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="TR" name="TR" value="Turkey"><label for="TR">
+                            Turkey</label></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="countryCheck" id="TM" name="TM" value="Turkmenistan"><label
+                            for="TM">
+                            Turkmenistan</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="TC" name="TC"
+                            value="Turks and Caicos Islands"><label for="TC"> Turks and
+                            Caicos
+                            Islands</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="TV" name="TV" value="Tuvalu"><label for="TV">
+                            Tuvalu</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="UG" name="UG" value="Uganda"><label for="UG">
+                            Uganda</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="UA" name="UA" value="Ukraine"><label for="UA">
+                            Ukraine</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="AE" name="AE"
+                            value="United Arab Emirates"><label for="AE"> United Arab
+                            Emirates</label></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="countryCheck" id="GB" name="GB" value="United Kingdom"><label
+                            for="GB">
+                            United Kingdom</label>
+                    </td>
+                    <td><input type="checkbox" class="countryCheck" id="US" name="US" value="United States"><label
+                            for="US">
+                            United States</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="UM" name="UM"
+                            value="United States Minor Outlying Islands"><label for="UM">
+                            United
+                            States
+                            Minor Outlying Islands</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="UY" name="UY" value="Uruguay"><label for="UY">
+                            Uruguay</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="UZ" name="UZ" value="Uzbekistan"><label
+                            for="UZ">
+                            Uzbekistan</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="VU" name="VU" value="Vanuatu"><label for="VU">
+                            Vanuatu</label></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="countryCheck" id="VE" name="VE"
+                            value="Venezuela, Bolivarian Republic of"><label for="VE">Venezuela,
+                            Bolivarian Republic of</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="VN" name="VN" value="Viet Nam"><label for="VN">
+                            Viet
+                            Nam</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="VG" name="VG"
+                            value="Virgin Islands, British"><label for="VG"> Virgin Islands,
+                            British</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="VI" name="VI"
+                            value="Virgin Islands, U.S."><label for="VI"> Virgin Islands,
+                            U.S.</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="WF" name="WF" value="Wallis and Futuna"><label
+                            for="WF">
+                            Wallis and
+                            Futuna</label>
+                    </td>
+                    <td><input type="checkbox" class="countryCheck" id="EH" name="EH" value="Western Sahara"><label
+                            for="EH">
+                            Western Sahara</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="countryCheck" id="YE" name="YE" value="Yemen"><label for="YE">
+                            Yemen</label>
+                    </td>
+                    <td><input type="checkbox" class="countryCheck" id="ZM" name="ZM" value="Zambia"><label for="ZM">
+                            Zambia</label></td>
+                    <td><input type="checkbox" class="countryCheck" id="ZW" name="ZW" value="Zimbabwe"><label for="ZW">
+                            Zimbabwe</label></td>
+                </tr>
+            </table>
+        </div>
     </div>
-  </div>
-  <script>
-    fetch('/data').then(response => response.json()).then(data => {
-      const { countries, link } = data;
-      document.getElementById('link-input').value = link.link;
-      countries.list.map(country => {
-        document.getElementById(country.code).checked = country.prohibited;
-      });
-    });
+    <script>
+        fetch('/data').then(response => response.json()).then(data => {
+            const { countries, link } = data;
+            document.getElementById('link-input').value = link.link;
+            countries.list.map(country => {
+                document.getElementById(country.code).checked = country.prohibited;
+            });
+        });
 
-    const saveChanges = () => {
-      const link = document.getElementById('link-input').value;
-      const countries = Array.from(document.getElementsByClassName('countryCheck'));
-      const mapped = countries.map(country => ({ code: country.name, prohibited: country.checked }));
-      fetch('/save', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json;charset=utf-8'
-        },
-        body: JSON.stringify({
-          link,
-          countries: mapped,
-        }),
-      }).then(response => response.json()).then(data => console.log(data));
-    }
-  </script>
+        const saveChanges = () => {
+            const link = document.getElementById('link-input').value;
+            const countries = Array.from(document.getElementsByClassName('countryCheck'));
+            const mapped = countries.map(country => ({ code: country.name, prohibited: country.checked }));
+            fetch('/save', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json;charset=utf-8'
+                },
+                body: JSON.stringify({
+                    link,
+                    countries: mapped,
+                }),
+            }).then(response => response.json()).then(data => console.log(data));
+        }
+    </script>
 </body>
 
 </html>
